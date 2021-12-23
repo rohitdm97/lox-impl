@@ -22,8 +22,7 @@ public class Application {
 
     public static void main(String[] args) {
         try {
-            // todo remove this
-            new Application().run(new String[] { "scripts/closure.jlox" });
+            new Application().run(args);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
