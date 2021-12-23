@@ -46,6 +46,19 @@ public class AstPrinter implements Expr.Visitor<String> {
     }
 
     @Override
+    public String visitGetExpr(Expr.Get expr) {
+        final String object = expr.object.accept(this);
+        return String.format("(get %s %s)", object, expr.name);
+    }
+
+    @Override
+    public String visitSetExpr(Expr.Set expr) {
+        final String object = expr.object.accept(this);
+        final String value = expr.value.accept(this);
+        return String.format("(set %s %s ---> %s)", object, expr.name.lexeme, value);
+    }
+
+    @Override
     public String visitGroupingExpr(Expr.Grouping expr) {
         return parenthesize("group", expr.expression);
     }

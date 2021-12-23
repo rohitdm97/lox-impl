@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b45edc6-350f-455e-89b7-82ac57a8e850" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Resolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/LoxClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/LoxInstance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Environment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/cmd/GenerateAst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/cmd/GenerateAst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/AstPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/AstPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Expr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Expr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/error/ErrorReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/error/ErrorReport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/LoxFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/LoxFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Resolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Resolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Stmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Stmt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,17 +181,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/LoxFunction.java</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/LoxFunction.java</url>
-          <line>27</line>
+          <line>28</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Resolver.java</url>
-          <line>106</line>
+          <line>126</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>

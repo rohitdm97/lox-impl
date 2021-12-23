@@ -9,6 +9,7 @@ class LoxFunction implements LoxCallable {
 
     private final Stmt.Function declaration;
     private final Environment closure;
+    private final boolean isInitializer;
 
     @Override
     public int arity() {
@@ -25,14 +26,25 @@ class LoxFunction implements LoxCallable {
         try {
             interpreter.executeBlockUsingEnvironment(declaration.body, environment);
         } catch (Return returnValue) {
+            if (isInitializer) {
+                return closure.get("this");
+            }
             return returnValue.value;
         }
+
+        if (isInitializer) return closure.get("this");
         return null;
     }
 
     @Override
     public String toString() {
         return String.format("<fn %s>", declaration.name.lexeme);
+    }
+
+    LoxFunction bind(LoxInstance instance) {
+        Environment environment = new Environment(closure);
+        environment.define("this", instance);
+        return new LoxFunction(declaration, environment, isInitializer);
     }
 
 }
