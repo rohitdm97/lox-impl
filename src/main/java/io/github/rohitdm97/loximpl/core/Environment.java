@@ -53,6 +53,19 @@ public class Environment {
         parent.assign(name, value);
     }
 
+    void assignAt(int distance, String name, Object value) {
+        ancestor(distance).values.put(name, value);
+    }
+
+    Environment ancestor(int distance) {
+        Environment result = this;
+        for (int i = 0; i < distance; i++) {
+            result = result.parent;
+        }
+
+        return result;
+    }
+
     private static class NoOp extends Environment {
         public NoOp() {
         }

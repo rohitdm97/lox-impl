@@ -4,13 +4,16 @@ import io.github.rohitdm97.loximpl.error.ErrorReport;
 import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
 
     @Getter
     private final Environment globals = Environment.DEFAULT;
     private Environment environment = globals;
+    private final Map<Expr, Integer> locals = new HashMap<>();
 
     private final ErrorReport report;
 
@@ -101,7 +104,6 @@ public class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
     @Override
     public Void visitFunctionStmt(Stmt.Function stmt) {
         LoxFunction function = new LoxFunction(stmt, this.environment);
-        this.environment = new Environment(this.environment);
         environment.define(stmt.name.lexeme, function);
         return null;
     }
@@ -231,14 +233,7 @@ public class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
 
     @Override
     public Object visitVariableExpr(Expr.Variable expr) {
-        final Token token = expr.name;
-        final String name = token.lexeme;
-        if (!environment.isDefined(name)) {
-            throw new RuntimeError(token, String.format("Undefined variable '%s'", name));
-        } else if (!environment.isInitialized(name)) {
-            throw new RuntimeError(token, String.format("Uninitialized variable '%s'", name));
-        }
-        return environment.get(name);
+        return lookUpVariable(expr.name, expr);
     }
 
     @Override
@@ -246,10 +241,13 @@ public class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
         final Token token = expr.name;
         final String name = token.lexeme;
         Object value = evaluate(expr.value);
-        if (!environment.isDefined(name)) {
-            throw new RuntimeError(token, String.format("Undefined variable '%s'", name));
+
+        if (!locals.containsKey(expr)) {
+            globals.assign(expr.name.lexeme, value);
         }
-        environment.assign(name, value);
+        int distance = locals.get(expr);
+        environment.assignAt(distance, expr.name.lexeme, value);
+
         return value;
     }
 
@@ -292,6 +290,29 @@ public class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
         if (left instanceof Double && right instanceof Double) return;
 
         throw new RuntimeError(operator, "Operands must be numbers.");
+    }
+
+    public void resolve(Expr expr, int depth) {
+        locals.put(expr, depth);
+    }
+
+    private Object lookUpVariable(Token token, Expr expr) {
+        if (!locals.containsKey(expr)) {
+            if (!globals.isDefined(token.lexeme)) {
+                throw new RuntimeError(token, String.format("Undefined variable '%s'", token.lexeme));
+            }
+            return lookUpInitialized(globals, token);
+        }
+        int distance = locals.get(expr);
+        // we know it is defined
+        return lookUpInitialized(environment.ancestor(distance), token);
+    }
+
+    private Object lookUpInitialized(Environment env, Token token) {
+        if (!env.isInitialized(token.lexeme)) {
+            throw new RuntimeError(token, String.format("Uninitialized variable '%s'", token.lexeme));
+        }
+        return env.get(token.lexeme);
     }
 
     private static class RuntimeError extends RuntimeException {
