@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b45edc6-350f-455e-89b7-82ac57a8e850" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/cmd/GenerateAst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/cmd/GenerateAst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/AstPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/AstPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Expr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Expr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/LoxClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/LoxClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Resolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Resolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Stmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/rohitdm97/loximpl/core/Stmt.java" afterDir="false" />
-    </list>
+    <list default="true" id="1b45edc6-350f-455e-89b7-82ac57a8e850" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
