@@ -59,6 +59,16 @@ public class AstPrinter implements Expr.Visitor<String> {
     }
 
     @Override
+    public String visitSuperExpr(Expr.Super expr) {
+        return String.format("(super %s)", expr.method.lexeme);
+    }
+
+    @Override
+    public String visitThisExpr(Expr.This expr) {
+        return "(this)";
+    }
+
+    @Override
     public String visitGroupingExpr(Expr.Grouping expr) {
         return parenthesize("group", expr.expression);
     }
