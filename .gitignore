@@ -1,8 +1,2 @@
-
-c/.vs/clox/v17/Browse.VC.db
-c/.vs/c/v17/.suo
-c/.vs/clox/v17/.suo
-c/.vs/clox/v17/Browse.VC.db-shm
-c/.vs/clox/v17/Browse.VC.opendb
-c/.vs/clox/v17/Browse.VC.db-wal
-c/.vs/slnx.sqlite
+c/.vs/
+c/x64/

@@ -1,4 +1,0 @@
-﻿  compiler.c
-C:\Users\rohit\Documents\GitHub\lox-impl\c\compiler.c(235,17): warning C4083: expected '('; found identifier 'disable'
-C:\Users\rohit\Documents\GitHub\lox-impl\c\compiler.c(278,17): warning C4083: expected '('; found identifier 'restore'
-  clox.vcxproj -> C:\Users\rohit\Documents\GitHub\lox-impl\c\x64\Debug\clox.exe
