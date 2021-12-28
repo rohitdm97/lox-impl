@@ -20,6 +20,7 @@ void initVM() {
 }
 
 void freeVM() {
+	free_table(&vm.strings);
 	free_objects();
 }
 
@@ -93,23 +94,6 @@ static void runtime_error(const char* format, ...) {
 	int line = vm.chunk->lines[instruction];
 	fprintf(stderr, "[line %d] in script\n", line);
 	reset_stack();
-}
-
-bool are_values_equal(Value a, Value b) {
-	if (a.type != b.type) return false;
-	switch (a.type) {
-	case VAL_BOOL:   return AS_BOOL(a) == AS_BOOL(b);
-	case VAL_NIL:    return true;
-	case VAL_NUMBER: return AS_NUMBER(a) == AS_NUMBER(b);
-	case VAL_OBJ: {
-		ObjString* aString = AS_STRING(a);
-		ObjString* bString = AS_STRING(b);
-		return aString->length == bString->length &&
-			memcmp(aString->chars, bString->chars,
-				aString->length) == 0;
-	}
-	default:         return false; // Unreachable.
-	}
 }
 
 static InterpretResult run() {
